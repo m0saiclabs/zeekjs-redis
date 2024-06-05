@@ -16,6 +16,8 @@ RUN apt-get install -y --no-install-recommends \
 # Configure unixsocket for redis
 RUN sed -i "s|# unixsocket /run/redis/redis-server.sock|unixsocket /var/run/redis/redis.sock|" /etc/redis/redis.conf
 RUN sed -i "s|bind 127.0.0.1 -::1|bind 0.0.0.0|" /etc/redis/redis.conf
+RUN sed -i "s|protected-mode yes|protected-mode no|" /etc/redis/redis.conf
+
 # Copy the source dir
 COPY . /zeekjs-redis
 
