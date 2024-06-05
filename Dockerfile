@@ -36,3 +36,4 @@ RUN mv /zeekjs-redis/testing/Traces/*.pcap /root
 RUN rm -rf /zeekjs-redis
 
 CMD /etc/init.d/redis-server start && bash
+CMD zeek -Cr zeekjs-redis-test.pcap
