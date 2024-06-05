@@ -1,4 +1,4 @@
-FROM zeek/zeek:latest
+FROM zeek/zeek:lts
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y --no-install-recommends \
